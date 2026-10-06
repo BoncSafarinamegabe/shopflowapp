@@ -9,7 +9,7 @@ import helmet from 'helmet';
 import nodemailer from 'nodemailer';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const dataDirectory = path.join(__dirname, '..', 'ShopFlow-RDC-data');
+const dataDirectory = process.env.DATA_DIR || path.join(__dirname, '..', 'ShopFlow-RDC-data');
 fs.mkdirSync(dataDirectory, { recursive: true });
 
 const app = express();
